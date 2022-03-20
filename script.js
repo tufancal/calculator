@@ -30,3 +30,43 @@ const operate = function (operator, a, b) {
       return divide(a, b);
   }
 };
+
+// DOM declarations
+const inputField = document.getElementById("nonedit"); //DISPLAY
+const number0 = document.getElementById("numBtn0");
+const number1 = document.getElementById("numBtn1");
+const number2 = document.getElementById("numBtn2");
+const number3 = document.getElementById("numBtn3");
+const number4 = document.getElementById("numBtn4");
+const number5 = document.getElementById("numBtn5");
+const number6 = document.getElementById("numBtn6");
+const number7 = document.getElementById("numBtn7");
+const number8 = document.getElementById("numBtn8");
+const number9 = document.getElementById("numBtn9");
+
+// Start condition
+inputField.value = "0";
+
+// addEventLister for clicking the numButtons
+number0.addEventListener("click", () => {
+  if (inputField.value != 0) {
+    inputField.value = "0";
+  } else {
+  }
+});
+
+number1.addEventListener("click", () => {
+  if ((inputField.value = "0")) {
+    inputField.value = "1";
+  } else {
+    inputField.textContent = "1";
+  }
+});
+
+number2.addEventListener("click", () => {
+  inputField.value = "2";
+});
+
+number3.addEventListener("click", () => {
+  inputField.value = "3";
+});
