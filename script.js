@@ -45,28 +45,33 @@ const number8 = document.getElementById("numBtn8");
 const number9 = document.getElementById("numBtn9");
 
 // Start condition
+let currentNumber = "";
 inputField.value = "0";
 
 // addEventLister for clicking the numButtons
 number0.addEventListener("click", () => {
-  if (inputField.value != 0) {
-    inputField.value = "0";
-  } else {
+  if (inputField.value != "0") {
+    currentNumber += "0";
+    inputField.value = currentNumber;
   }
 });
 
 number1.addEventListener("click", () => {
-  if ((inputField.value = "0")) {
-    inputField.value = "1";
-  } else {
-    inputField.textContent = "1";
-  }
+  currentNumber += "1";
+  inputField.value = currentNumber;
 });
 
 number2.addEventListener("click", () => {
-  inputField.value = "2";
+  currentNumber += "2";
+  inputField.value = currentNumber;
 });
 
 number3.addEventListener("click", () => {
-  inputField.value = "3";
+  currentNumber += "3";
+  inputField.value = currentNumber;
+});
+
+number4.addEventListener("click", () => {
+  currentNumber += "4";
+  inputField.value = currentNumber;
 });
