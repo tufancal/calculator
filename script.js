@@ -75,14 +75,30 @@ number0.addEventListener("click", () => {
 });
 
 number1.addEventListener("click", () => {
-  currentNumber += "1";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "1";
+    inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
+    currentNumber = "";
+    currentNumber += "1";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "1";
+    inputField.value = currentNumber;
+  }
 });
 
 number2.addEventListener("click", () => {
   if (inputField.value == result) {
     calculateArray = [];
     calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "2";
+    inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
     currentNumber = "";
     currentNumber += "2";
     inputField.value = currentNumber;
@@ -99,6 +115,10 @@ number3.addEventListener("click", () => {
     currentNumber = "";
     currentNumber += "3";
     inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
+    currentNumber = "";
+    currentNumber += "3";
+    inputField.value = currentNumber;
   } else {
     currentNumber += "3";
     inputField.value = currentNumber;
@@ -109,6 +129,10 @@ number4.addEventListener("click", () => {
   if (inputField.value == result) {
     calculateArray = [];
     calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "4";
+    inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
     currentNumber = "";
     currentNumber += "4";
     inputField.value = currentNumber;
@@ -125,6 +149,10 @@ number5.addEventListener("click", () => {
     currentNumber = "";
     currentNumber += "5";
     inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
+    currentNumber = "";
+    currentNumber += "5";
+    inputField.value = currentNumber;
   } else {
     currentNumber += "5";
     inputField.value = currentNumber;
@@ -135,6 +163,10 @@ number6.addEventListener("click", () => {
   if (inputField.value == result) {
     calculateArray = [];
     calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "6";
+    inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
     currentNumber = "";
     currentNumber += "6";
     inputField.value = currentNumber;
@@ -151,6 +183,10 @@ number7.addEventListener("click", () => {
     currentNumber = "";
     currentNumber += "7";
     inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
+    currentNumber = "";
+    currentNumber += "7";
+    inputField.value = currentNumber;
   } else {
     currentNumber += "7";
     inputField.value = currentNumber;
@@ -164,6 +200,10 @@ number8.addEventListener("click", () => {
     currentNumber = "";
     currentNumber += "8";
     inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
+    currentNumber = "";
+    currentNumber += "8";
+    inputField.value = currentNumber;
   } else {
     currentNumber += "8";
     inputField.value = currentNumber;
@@ -174,6 +214,10 @@ number9.addEventListener("click", () => {
   if (inputField.value == result) {
     calculateArray = [];
     calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "9";
+    inputField.value = currentNumber;
+  } else if (inputField.value === "0") {
     currentNumber = "";
     currentNumber += "9";
     inputField.value = currentNumber;
