@@ -81,81 +81,178 @@ number1.addEventListener("click", () => {
 });
 
 number2.addEventListener("click", () => {
-  currentNumber += "2";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "2";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "2";
+    inputField.value = currentNumber;
+  }
 });
 
 number3.addEventListener("click", () => {
-  currentNumber += "3";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "3";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "3";
+    inputField.value = currentNumber;
+  }
 });
 
 number4.addEventListener("click", () => {
-  currentNumber += "4";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "4";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "4";
+    inputField.value = currentNumber;
+  }
 });
 
 number5.addEventListener("click", () => {
-  currentNumber += "5";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "5";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "5";
+    inputField.value = currentNumber;
+  }
 });
 
 number6.addEventListener("click", () => {
-  currentNumber += "6";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "6";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "6";
+    inputField.value = currentNumber;
+  }
 });
 
 number7.addEventListener("click", () => {
-  currentNumber += "7";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "7";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "7";
+    inputField.value = currentNumber;
+  }
 });
 
 number8.addEventListener("click", () => {
-  currentNumber += "8";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "8";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "8";
+    inputField.value = currentNumber;
+  }
 });
 
 number9.addEventListener("click", () => {
-  currentNumber += "9";
-  inputField.value = currentNumber;
+  if (inputField.value == result) {
+    calculateArray = [];
+    calculateArray[1] = currentNumber;
+    currentNumber = "";
+    currentNumber += "9";
+    inputField.value = currentNumber;
+  } else {
+    currentNumber += "9";
+    inputField.value = currentNumber;
+  }
 });
 
 // addEventListener for operators & clear button
 
 clearBtn.addEventListener("click", () => {
+  calculateArray = [];
   currentNumber = "";
   inputField.value = currentNumber;
 });
 
 addBtn.addEventListener("click", (number) => {
+  calculateArray[0] = "+";
   number = parseFloat(currentNumber);
-  currentNumber = "";
-  inputField.value = currentNumber;
-  calculateArray = ["+", number];
+  calculateArray.push(number);
+  if (calculateArray.length === 3) {
+    result = operate(calculateArray);
+    currentNumber = result;
+    inputField.value = result;
+  } else {
+    currentNumber = "";
+    inputField.value = currentNumber;
+    calculateArray = ["+", number];
+  }
   return calculateArray;
 });
 
 subtractBtn.addEventListener("click", (number) => {
+  calculateArray[0] = "-";
   number = parseFloat(currentNumber);
-  currentNumber = "";
-  inputField.value = currentNumber;
-  calculateArray = ["-", number];
+  calculateArray.push(number);
+  if (calculateArray.length === 3) {
+    result = operate(calculateArray);
+    currentNumber = result;
+    inputField.value = result;
+  } else {
+    currentNumber = "";
+    inputField.value = currentNumber;
+    calculateArray = ["-", number];
+  }
   return calculateArray;
 });
 
 multiplyBtn.addEventListener("click", (number) => {
+  calculateArray[0] = "*";
   number = parseFloat(currentNumber);
-  currentNumber = "";
-  inputField.value = currentNumber;
-  calculateArray = ["*", number];
+  calculateArray.push(number);
+  if (calculateArray.length === 3) {
+    result = operate(calculateArray);
+    currentNumber = result;
+    inputField.value = result;
+  } else {
+    currentNumber = "";
+    inputField.value = currentNumber;
+    calculateArray = ["*", number];
+  }
   return calculateArray;
 });
 
 divideBtn.addEventListener("click", (number) => {
+  calculateArray[0] = "/";
   number = parseFloat(currentNumber);
-  currentNumber = "";
-  inputField.value = currentNumber;
-  calculateArray = ["/", number];
+  calculateArray.push(number);
+  if (calculateArray.length === 3) {
+    result = operate(calculateArray);
+    currentNumber = result;
+    inputField.value = result;
+  } else {
+    currentNumber = "";
+    inputField.value = currentNumber;
+    calculateArray = ["/", number];
+  }
   return calculateArray;
 });
 
