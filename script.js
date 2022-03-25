@@ -31,7 +31,7 @@ const operate = function ([operator, a, b]) {
   }
 };
 
-// DOM declarations
+// DOM declarations : numbers
 const inputField = document.getElementById("nonedit"); //DISPLAY
 const number0 = document.getElementById("numBtn0");
 const numberDot = document.getElementById("numBtnDot");
@@ -45,13 +45,12 @@ const number7 = document.getElementById("numBtn7");
 const number8 = document.getElementById("numBtn8");
 const number9 = document.getElementById("numBtn9");
 
+// DOM declartions : operators
 const clearBtn = document.getElementById("numBtnClear");
-
 const addBtn = document.getElementById("numBtnAdd");
 const subtractBtn = document.getElementById("numBtnSubtract");
 const multiplyBtn = document.getElementById("numBtnMultiply");
 const divideBtn = document.getElementById("numBtnDivide");
-
 const equalBtn = document.getElementById("numBtnEqual");
 
 // Start condition
