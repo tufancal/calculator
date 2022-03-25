@@ -18,7 +18,7 @@ const divide = function (a, b) {
 };
 
 // function to take an operator and call one of the functions above
-const operate = function (operator, a, b) {
+const operate = function ([operator, a, b]) {
   switch (operator) {
     case "+":
       return add(a, b);
@@ -34,6 +34,7 @@ const operate = function (operator, a, b) {
 // DOM declarations
 const inputField = document.getElementById("nonedit"); //DISPLAY
 const number0 = document.getElementById("numBtn0");
+const numberDot = document.getElementById("numBtnDot");
 const number1 = document.getElementById("numBtn1");
 const number2 = document.getElementById("numBtn2");
 const number3 = document.getElementById("numBtn3");
@@ -44,11 +45,29 @@ const number7 = document.getElementById("numBtn7");
 const number8 = document.getElementById("numBtn8");
 const number9 = document.getElementById("numBtn9");
 
+const clearBtn = document.getElementById("numBtnClear");
+
+const addBtn = document.getElementById("numBtnAdd");
+const subtractBtn = document.getElementById("numBtnSubtract");
+const multiplyBtn = document.getElementById("numBtnMultiply");
+const divideBtn = document.getElementById("numBtnDivide");
+
+const equalBtn = document.getElementById("numBtnEqual");
+
 // Start condition
 let currentNumber = "";
-inputField.value = "0";
+inputField.value = currentNumber;
+let calculateArray = [];
+let result;
 
 // addEventLister for clicking the numButtons
+numberDot.addEventListener("click", () => {
+  if (currentNumber.length > 0 && !currentNumber.includes(".")) {
+    currentNumber += ".";
+    inputField.value = currentNumber;
+  }
+});
+
 number0.addEventListener("click", () => {
   if (inputField.value != "0") {
     currentNumber += "0";
@@ -74,4 +93,75 @@ number3.addEventListener("click", () => {
 number4.addEventListener("click", () => {
   currentNumber += "4";
   inputField.value = currentNumber;
+});
+
+number5.addEventListener("click", () => {
+  currentNumber += "5";
+  inputField.value = currentNumber;
+});
+
+number6.addEventListener("click", () => {
+  currentNumber += "6";
+  inputField.value = currentNumber;
+});
+
+number7.addEventListener("click", () => {
+  currentNumber += "7";
+  inputField.value = currentNumber;
+});
+
+number8.addEventListener("click", () => {
+  currentNumber += "8";
+  inputField.value = currentNumber;
+});
+
+number9.addEventListener("click", () => {
+  currentNumber += "9";
+  inputField.value = currentNumber;
+});
+
+// addEventListener for operators & clear button
+
+clearBtn.addEventListener("click", () => {
+  currentNumber = "";
+  inputField.value = currentNumber;
+});
+
+addBtn.addEventListener("click", (number) => {
+  number = parseFloat(currentNumber);
+  currentNumber = "";
+  inputField.value = currentNumber;
+  calculateArray = ["+", number];
+  return calculateArray;
+});
+
+subtractBtn.addEventListener("click", (number) => {
+  number = parseFloat(currentNumber);
+  currentNumber = "";
+  inputField.value = currentNumber;
+  calculateArray = ["-", number];
+  return calculateArray;
+});
+
+multiplyBtn.addEventListener("click", (number) => {
+  number = parseFloat(currentNumber);
+  currentNumber = "";
+  inputField.value = currentNumber;
+  calculateArray = ["*", number];
+  return calculateArray;
+});
+
+divideBtn.addEventListener("click", (number) => {
+  number = parseFloat(currentNumber);
+  currentNumber = "";
+  inputField.value = currentNumber;
+  calculateArray = ["/", number];
+  return calculateArray;
+});
+
+equalBtn.addEventListener("click", (number) => {
+  number = parseFloat(currentNumber);
+  calculateArray.push(number);
+  result = operate(calculateArray);
+  inputField.value = result;
 });
