@@ -252,6 +252,7 @@ addBtn.addEventListener("click", (number) => {
   calculateArray.push(number);
   console.log(calculateArray);
   if (calculateArray.length === 3) {
+    calculateArray[0] = "+";
     result = operate(calculateArray);
     currentNumber = result;
     inputField.value = result;
@@ -267,6 +268,7 @@ subtractBtn.addEventListener("click", (number) => {
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   if (calculateArray.length === 3) {
+    calculateArray[0] = "-";
     result = operate(calculateArray);
     currentNumber = result;
     inputField.value = result;
@@ -282,6 +284,7 @@ multiplyBtn.addEventListener("click", (number) => {
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   if (calculateArray.length === 3) {
+    calculateArray[0] = "*";
     result = operate(calculateArray);
     currentNumber = result;
     inputField.value = result;
@@ -297,6 +300,7 @@ divideBtn.addEventListener("click", (number) => {
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   if (calculateArray.length === 3) {
+    calculateArray[0] = "/";
     result = operate(calculateArray);
     currentNumber = result;
     inputField.value = result;
