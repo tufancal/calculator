@@ -252,7 +252,7 @@ addBtn.addEventListener("click", (number) => {
   calculateArray.push(number);
   console.log(calculateArray);
   if (calculateArray.length === 3) {
-    calculateArray[0] = "+";
+    calculateArray[0] = "+"; // to calculate back to back with the operate function
     result = operate(calculateArray);
     currentNumber = result;
     inputField.value = result;
