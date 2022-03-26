@@ -250,7 +250,6 @@ deleteBtn.addEventListener("click", () => {
 addBtn.addEventListener("click", (number) => {
   number = parseFloat(currentNumber);
   calculateArray.push(number);
-  console.log(calculateArray);
   if (calculateArray.length === 3) {
     calculateArray[0] = "+"; // to calculate back to back with the operate function
     result = operate(calculateArray);
@@ -316,6 +315,7 @@ equalBtn.addEventListener("click", (number) => {
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   result = operate(calculateArray);
+  currentNumber = result;
   inputField.value = result;
 });
 
