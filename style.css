@@ -50,6 +50,10 @@ body {
   flex-wrap: wrap;
 }
 
+#operators button {
+  background-color: #ffd9ce;
+}
+
 button {
   background: none;
   border: none;
