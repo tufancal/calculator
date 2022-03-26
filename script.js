@@ -46,12 +46,16 @@ const number8 = document.getElementById("numBtn8");
 const number9 = document.getElementById("numBtn9");
 
 // DOM declartions : operators
-const clearBtn = document.getElementById("numBtnClear");
+const signBtn = document.getElementById("numBtnSign");
 const addBtn = document.getElementById("numBtnAdd");
 const subtractBtn = document.getElementById("numBtnSubtract");
 const multiplyBtn = document.getElementById("numBtnMultiply");
 const divideBtn = document.getElementById("numBtnDivide");
 const equalBtn = document.getElementById("numBtnEqual");
+
+// DOM declartions : function buttons
+const clearBtn = document.getElementById("numBtnClear");
+const deleteBtn = document.getElementById("numBtnDelete");
 
 // Start condition
 let currentNumber = "";
@@ -82,6 +86,7 @@ number1.addEventListener("click", () => {
     currentNumber += "1";
     inputField.value = currentNumber;
   } else if (inputField.value === "0") {
+    // not being able to do 01...
     currentNumber = "";
     currentNumber += "1";
     inputField.value = currentNumber;
@@ -227,18 +232,25 @@ number9.addEventListener("click", () => {
   }
 });
 
-// addEventListener for operators & clear button
-
+// addEventListener for function buttons
 clearBtn.addEventListener("click", () => {
   calculateArray = [];
   currentNumber = "";
   inputField.value = currentNumber;
 });
 
+deleteBtn.addEventListener("click", () => {
+  if (currentNumber.length > 0) {
+    currentNumber = currentNumber.substring(0, currentNumber.length - 1);
+    inputField.value = currentNumber;
+  }
+});
+
+// addEventListener for operators
 addBtn.addEventListener("click", (number) => {
-  calculateArray[0] = "+";
   number = parseFloat(currentNumber);
   calculateArray.push(number);
+  console.log(calculateArray);
   if (calculateArray.length === 3) {
     result = operate(calculateArray);
     currentNumber = result;
@@ -252,7 +264,6 @@ addBtn.addEventListener("click", (number) => {
 });
 
 subtractBtn.addEventListener("click", (number) => {
-  calculateArray[0] = "-";
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   if (calculateArray.length === 3) {
@@ -268,7 +279,6 @@ subtractBtn.addEventListener("click", (number) => {
 });
 
 multiplyBtn.addEventListener("click", (number) => {
-  calculateArray[0] = "*";
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   if (calculateArray.length === 3) {
@@ -284,7 +294,6 @@ multiplyBtn.addEventListener("click", (number) => {
 });
 
 divideBtn.addEventListener("click", (number) => {
-  calculateArray[0] = "/";
   number = parseFloat(currentNumber);
   calculateArray.push(number);
   if (calculateArray.length === 3) {
@@ -304,4 +313,12 @@ equalBtn.addEventListener("click", (number) => {
   calculateArray.push(number);
   result = operate(calculateArray);
   inputField.value = result;
+});
+
+signBtn.addEventListener("click", () => {
+  if (currentNumber.length > 0) {
+    currentNumber = Number(currentNumber) * -1;
+    currentNumber = currentNumber.toString();
+    inputField.value = currentNumber;
+  }
 });
